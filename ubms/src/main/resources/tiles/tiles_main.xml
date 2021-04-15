@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">	
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/WEB-INF/views/common/layout.jsp"> <!-- 화면템플릿 -->
+		<put-attribute name="title" value="레이아웃 페이지" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" /> <!-- header.jsp를 header라고 하겠다 -->
+		<put-attribute name="side" value="/WEB-INF/views/common/side.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+		<put-attribute name="quickMenu" value="/WEB-INF/views/common/quickMenu.jsp" />
+	</definition>
+
+	<definition name="/main/main" extends="baseLayout"> 
+		<!-- definition name과 컨트롤러의 return 값과 매칭한다.  -->
+		<!-- definition에 /main/main 오면, baseLayout을 extends한거 -->
+		<!-- extends : 즉 baseLayout의 <put-attribute> 다 상속 → 달라지는 것만 표시하겠다. -->
+		<put-attribute name="title" value="ubms_main"/>
+		<put-attribute name="body" value="/WEB-INF/views/main/main.jsp" />
+		<!-- 일반적으로 화면의 본문(body, main, content, article, root) -->
+	</definition>
+	
+</tiles-definitions>
+
+
